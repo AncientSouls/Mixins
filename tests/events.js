@@ -13,16 +13,16 @@ exports.__esModule = true;
 var chai_1 = require("chai");
 var sinon = require("sinon");
 var events_1 = require("../lib/events");
-var TestEvents = /** @class */ (function (_super) {
-    __extends(TestEvents, _super);
-    function TestEvents() {
-        return _super !== null && _super.apply(this, arguments) || this;
-    }
-    return TestEvents;
-}(events_1.Events));
 function default_1() {
     describe('Events:', function () {
         it('on() / once() / off() / emit()', function () {
+            var TestEvents = /** @class */ (function (_super) {
+                __extends(TestEvents, _super);
+                function TestEvents() {
+                    return _super !== null && _super.apply(this, arguments) || this;
+                }
+                return TestEvents;
+            }(events_1.Events));
             var events = new TestEvents();
             var callback = sinon.stub();
             callback.onCall(0).returns({ b: 'c' });
