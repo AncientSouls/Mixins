@@ -10,7 +10,6 @@ var __extends = (this && this.__extends) || (function () {
     };
 })();
 exports.__esModule = true;
-require("mocha");
 var chai_1 = require("chai");
 var sinon = require("sinon");
 var events_1 = require("../lib/events");

@@ -1,4 +1,3 @@
-import 'mocha';
 import { assert } from 'chai';
 import * as sinon from 'sinon';
 
@@ -8,15 +7,15 @@ import {
   IEventsList,
 } from '../lib/events';
 
-interface ITestEventsList extends IEventsList {
-  a: { b?: 'c', d?: 'e' };
-}
-
-class TestEvents extends Events implements IEvents<ITestEventsList> {}
-
 export default function () {
   describe('Events:', () => {
     it('on() / once() / off() / emit()', () => {
+      interface ITestEventsList extends IEventsList {
+        a: { b?: 'c', d?: 'e' };
+      }
+      
+      class TestEvents extends Events implements IEvents<ITestEventsList> {}
+      
       const events: IEvents<ITestEventsList> = new TestEvents();
       
       const callback = sinon.stub();

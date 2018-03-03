@@ -1,6 +1,5 @@
 "use strict";
 exports.__esModule = true;
-require("mocha");
 var chai_1 = require("chai");
 var node_1 = require("../lib/node");
 function default_1() {

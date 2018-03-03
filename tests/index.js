@@ -1,7 +1,6 @@
 "use strict";
 exports.__esModule = true;
 require('source-map-support').install();
-require("mocha");
 var events_1 = require("./events");
 var node_1 = require("./node");
 var manager_1 = require("./manager");
