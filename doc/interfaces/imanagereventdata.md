@@ -12,7 +12,7 @@
 
 **●  manager**:  *[TManager](../#tmanager)* 
 
-*Defined in [lib/manager.ts:20](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/manager.ts#L20)*
+*Defined in [lib/manager.ts:20](https://github.com/AncientSouls/Mixins/blob/1e3c8a9/src/lib/manager.ts#L20)*
 
 
 
@@ -26,7 +26,7 @@ ___
 
 **●  node**:  *[TNode](../#tnode)* 
 
-*Defined in [lib/manager.ts:19](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/manager.ts#L19)*
+*Defined in [lib/manager.ts:19](https://github.com/AncientSouls/Mixins/blob/1e3c8a9/src/lib/manager.ts#L19)*
 
 
 
