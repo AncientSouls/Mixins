@@ -1,4 +1,4 @@
-[ancient-mixins](../README.md) > [Events](../classes/events.md)
+[ancient-mixins](../README.md) > ["events"](../modules/_events_.md) > [Events](../classes/_events_.events.md)
 
 
 
@@ -9,7 +9,7 @@
 ## Hierarchy
 
 
-↳  [IEvents](../interfaces/ievents.md)
+↳  [IEvents](../interfaces/_events_.ievents.md)
 
 **↳ Events**
 
@@ -26,15 +26,15 @@
 
 ### Properties
 
-* [emitter](events.md#emitter)
+* [emitter](_events_.events.md#emitter)
 
 
 ### Methods
 
-* [emit](events.md#emit)
-* [off](events.md#off)
-* [on](events.md#on)
-* [once](events.md#once)
+* [emit](_events_.events.md#emit)
+* [off](_events_.events.md#off)
+* [on](_events_.events.md#on)
+* [once](_events_.events.md#once)
 
 
 
@@ -46,9 +46,9 @@
 
 **●  emitter**:  *`EventEmitter`* 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[emitter](../interfaces/ievents.md#emitter)*
+*Inherited from [IEvents](../interfaces/_events_.ievents.md).[emitter](../interfaces/_events_.ievents.md#emitter)*
 
-*Defined in [lib/events.ts:9](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L9)*
+*Defined in [events.ts:9](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L9)*
 
 
 
@@ -66,9 +66,9 @@ ___
 
 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[emit](../interfaces/ievents.md#emit)*
+*Inherited from [IEvents](../interfaces/_events_.ievents.md).[emit](../interfaces/_events_.ievents.md#emit)*
 
-*Defined in [lib/events.ts:11](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L11)*
+*Defined in [events.ts:11](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L11)*
 
 
 
@@ -102,9 +102,9 @@ ___
 
 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[off](../interfaces/ievents.md#off)*
+*Inherited from [IEvents](../interfaces/_events_.ievents.md).[off](../interfaces/_events_.ievents.md#off)*
 
-*Defined in [lib/events.ts:20](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L20)*
+*Defined in [events.ts:20](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L20)*
 
 
 
@@ -138,9 +138,9 @@ ___
 
 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[on](../interfaces/ievents.md#on)*
+*Inherited from [IEvents](../interfaces/_events_.ievents.md).[on](../interfaces/_events_.ievents.md#on)*
 
-*Defined in [lib/events.ts:14](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L14)*
+*Defined in [events.ts:14](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L14)*
 
 
 
@@ -174,9 +174,9 @@ ___
 
 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[once](../interfaces/ievents.md#once)*
+*Inherited from [IEvents](../interfaces/_events_.ievents.md).[once](../interfaces/_events_.ievents.md#once)*
 
-*Defined in [lib/events.ts:17](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L17)*
+*Defined in [events.ts:17](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L17)*
 
 
 

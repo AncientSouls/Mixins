@@ -1,17 +1,27 @@
-[ancient-mixins](../README.md) > [Events](../classes/events.md)
+[ancient-mixins](../README.md) > ["events"](../modules/_events_.md) > [IEvents](../interfaces/_events_.ievents.md)
 
 
 
-# Class: Events
+# Interface: IEvents
 
 ## Type parameters
 #### IEventsList 
 ## Hierarchy
 
 
-↳  [IEvents](../interfaces/ievents.md)
+ [IInstance](_mixins_.iinstance.md)
 
-**↳ Events**
+**↳ IEvents**
+
+↳  [Events](../classes/_events_.events.md)
+
+
+
+
+↳  [INode](_node_.inode.md)
+
+
+
 
 
 
@@ -22,33 +32,15 @@
 ## Indexable
 
 \[key: `string`\]:&nbsp;`any`
-## Index
 
-### Properties
-
-* [emitter](events.md#emitter)
-
-
-### Methods
-
-* [emit](events.md#emit)
-* [off](events.md#off)
-* [on](events.md#on)
-* [once](events.md#once)
-
-
-
----
 ## Properties
 <a id="emitter"></a>
 
-### «Static» emitter
+###  emitter
 
 **●  emitter**:  *`EventEmitter`* 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[emitter](../interfaces/ievents.md#emitter)*
-
-*Defined in [lib/events.ts:9](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L9)*
+*Defined in [events.ts:9](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L9)*
 
 
 
@@ -60,15 +52,13 @@ ___
 ## Methods
 <a id="emit"></a>
 
-### «Static» emit
+###  emit
 
 ► **emit**IE(eventName: *`string`*, data: *`IEventsList[IE]`*): `this`
 
 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[emit](../interfaces/ievents.md#emit)*
-
-*Defined in [lib/events.ts:11](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L11)*
+*Defined in [events.ts:11](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L11)*
 
 
 
@@ -96,15 +86,13 @@ ___
 
 <a id="off"></a>
 
-### «Static» off
+###  off
 
 ► **off**IE(eventName: *`string`*, listener: *`function`*): `this`
 
 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[off](../interfaces/ievents.md#off)*
-
-*Defined in [lib/events.ts:20](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L20)*
+*Defined in [events.ts:20](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L20)*
 
 
 
@@ -132,15 +120,13 @@ ___
 
 <a id="on"></a>
 
-### «Static» on
+###  on
 
 ► **on**IE(eventName: *`string`*, listener: *`function`*): `this`
 
 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[on](../interfaces/ievents.md#on)*
-
-*Defined in [lib/events.ts:14](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L14)*
+*Defined in [events.ts:14](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L14)*
 
 
 
@@ -168,15 +154,13 @@ ___
 
 <a id="once"></a>
 
-### «Static» once
+###  once
 
 ► **once**IE(eventName: *`string`*, listener: *`function`*): `this`
 
 
 
-*Inherited from [IEvents](../interfaces/ievents.md).[once](../interfaces/ievents.md#once)*
-
-*Defined in [lib/events.ts:17](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L17)*
+*Defined in [events.ts:17](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L17)*
 
 
 

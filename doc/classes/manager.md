@@ -64,7 +64,7 @@
 
 *Inherited from [INode](../interfaces/inode.md).[constructor](../interfaces/inode.md#constructor)*
 
-*Defined in [lib/node.ts:25](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/node.ts#L25)*
+*Defined in [lib/node.ts:25](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/node.ts#L25)*
 
 
 
@@ -92,7 +92,7 @@
 
 *Inherited from [IManager](../interfaces/imanager.md).[Node](../interfaces/imanager.md#node)*
 
-*Defined in [lib/manager.ts:29](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/manager.ts#L29)*
+*Defined in [lib/manager.ts:29](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/manager.ts#L29)*
 
 
 
@@ -108,7 +108,7 @@ ___
 
 *Inherited from [INode](../interfaces/inode.md).[destroy](../interfaces/inode.md#destroy)*
 
-*Defined in [lib/node.ts:29](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/node.ts#L29)*
+*Defined in [lib/node.ts:29](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/node.ts#L29)*
 
 
 #### Type declaration
@@ -135,7 +135,7 @@ ___
 
 *Inherited from [IEvents](../interfaces/ievents.md).[emitter](../interfaces/ievents.md#emitter)*
 
-*Defined in [lib/events.ts:9](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/events.ts#L9)*
+*Defined in [lib/events.ts:9](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L9)*
 
 
 
@@ -151,7 +151,7 @@ ___
 
 *Inherited from [INode](../interfaces/inode.md).[generateId](../interfaces/inode.md#generateid)*
 
-*Defined in [lib/node.ts:27](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/node.ts#L27)*
+*Defined in [lib/node.ts:27](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/node.ts#L27)*
 
 
 #### Type declaration
@@ -178,7 +178,7 @@ ___
 
 *Inherited from [INode](../interfaces/inode.md).[id](../interfaces/inode.md#id)*
 
-*Defined in [lib/node.ts:25](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/node.ts#L25)*
+*Defined in [lib/node.ts:25](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/node.ts#L25)*
 
 
 
@@ -194,7 +194,7 @@ ___
 
 *Inherited from [INode](../interfaces/inode.md).[isDestroyed](../interfaces/inode.md#isdestroyed)*
 
-*Defined in [lib/node.ts:28](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/node.ts#L28)*
+*Defined in [lib/node.ts:28](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/node.ts#L28)*
 
 
 
@@ -210,7 +210,7 @@ ___
 
 *Inherited from [IManager](../interfaces/imanager.md).[nodes](../interfaces/imanager.md#nodes)*
 
-*Defined in [lib/manager.ts:30](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/manager.ts#L30)*
+*Defined in [lib/manager.ts:30](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/manager.ts#L30)*
 
 
 #### Type declaration
@@ -237,7 +237,7 @@ ___
 
 *Inherited from [IManager](../interfaces/imanager.md).[add](../interfaces/imanager.md#add)*
 
-*Defined in [lib/manager.ts:31](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/manager.ts#L31)*
+*Defined in [lib/manager.ts:31](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/manager.ts#L31)*
 
 
 
@@ -269,7 +269,7 @@ ___
 
 *Inherited from [IManager](../interfaces/imanager.md).[create](../interfaces/imanager.md#create)*
 
-*Defined in [lib/manager.ts:34](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/manager.ts#L34)*
+*Defined in [lib/manager.ts:34](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/manager.ts#L34)*
 
 
 
@@ -301,7 +301,7 @@ ___
 
 *Inherited from [IEvents](../interfaces/ievents.md).[emit](../interfaces/ievents.md#emit)*
 
-*Defined in [lib/events.ts:11](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/events.ts#L11)*
+*Defined in [lib/events.ts:11](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L11)*
 
 
 
@@ -337,7 +337,7 @@ ___
 
 *Inherited from [IEvents](../interfaces/ievents.md).[off](../interfaces/ievents.md#off)*
 
-*Defined in [lib/events.ts:20](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/events.ts#L20)*
+*Defined in [lib/events.ts:20](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L20)*
 
 
 
@@ -373,7 +373,7 @@ ___
 
 *Inherited from [IEvents](../interfaces/ievents.md).[on](../interfaces/ievents.md#on)*
 
-*Defined in [lib/events.ts:14](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/events.ts#L14)*
+*Defined in [lib/events.ts:14](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L14)*
 
 
 
@@ -409,7 +409,7 @@ ___
 
 *Inherited from [IEvents](../interfaces/ievents.md).[once](../interfaces/ievents.md#once)*
 
-*Defined in [lib/events.ts:17](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/events.ts#L17)*
+*Defined in [lib/events.ts:17](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/events.ts#L17)*
 
 
 
@@ -445,7 +445,7 @@ ___
 
 *Inherited from [IManager](../interfaces/imanager.md).[remove](../interfaces/imanager.md#remove)*
 
-*Defined in [lib/manager.ts:33](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/manager.ts#L33)*
+*Defined in [lib/manager.ts:33](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/manager.ts#L33)*
 
 
 
@@ -477,7 +477,7 @@ ___
 
 *Inherited from [IManager](../interfaces/imanager.md).[wrap](../interfaces/imanager.md#wrap)*
 
-*Defined in [lib/manager.ts:32](https://github.com/AncientSouls/Mixins/blob/81023d2/src/lib/manager.ts#L32)*
+*Defined in [lib/manager.ts:32](https://github.com/AncientSouls/Mixins/blob/1f04eec/src/lib/manager.ts#L32)*
 
 
 
