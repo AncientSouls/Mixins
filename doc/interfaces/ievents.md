@@ -40,7 +40,7 @@
 
 **●  emitter**:  *`EventEmitter`* 
 
-*Defined in [events.ts:9](https://github.com/AncientSouls/Mixins/blob/499453d/src/lib/events.ts#L9)*
+*Defined in [events.ts:9](https://github.com/AncientSouls/Mixins/blob/e93701d/src/lib/events.ts#L9)*
 
 
 
@@ -58,7 +58,7 @@ ___
 
 
 
-*Defined in [events.ts:11](https://github.com/AncientSouls/Mixins/blob/499453d/src/lib/events.ts#L11)*
+*Defined in [events.ts:11](https://github.com/AncientSouls/Mixins/blob/e93701d/src/lib/events.ts#L11)*
 
 
 
@@ -92,7 +92,7 @@ ___
 
 
 
-*Defined in [events.ts:20](https://github.com/AncientSouls/Mixins/blob/499453d/src/lib/events.ts#L20)*
+*Defined in [events.ts:20](https://github.com/AncientSouls/Mixins/blob/e93701d/src/lib/events.ts#L20)*
 
 
 
@@ -126,7 +126,7 @@ ___
 
 
 
-*Defined in [events.ts:14](https://github.com/AncientSouls/Mixins/blob/499453d/src/lib/events.ts#L14)*
+*Defined in [events.ts:14](https://github.com/AncientSouls/Mixins/blob/e93701d/src/lib/events.ts#L14)*
 
 
 
@@ -160,7 +160,7 @@ ___
 
 
 
-*Defined in [events.ts:17](https://github.com/AncientSouls/Mixins/blob/499453d/src/lib/events.ts#L17)*
+*Defined in [events.ts:17](https://github.com/AncientSouls/Mixins/blob/e93701d/src/lib/events.ts#L17)*
 
 
 
