@@ -28,7 +28,7 @@
 
 **●  added**:  *[IManagerEventData](imanagereventdata.md)* 
 
-*Defined in [manager.ts:24](https://github.com/AncientSouls/Mixins/blob/8c09444/src/lib/manager.ts#L24)*
+*Defined in [manager.ts:24](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/manager.ts#L24)*
 
 
 
@@ -44,7 +44,7 @@ ___
 
 *Inherited from [INodeEventsList](inodeeventslist.md).[destroyed](inodeeventslist.md#destroyed)*
 
-*Defined in [node.ts:21](https://github.com/AncientSouls/Mixins/blob/8c09444/src/lib/node.ts#L21)*
+*Defined in [node.ts:21](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/node.ts#L21)*
 
 
 
@@ -58,7 +58,7 @@ ___
 
 **●  removed**:  *[IManagerEventData](imanagereventdata.md)* 
 
-*Defined in [manager.ts:25](https://github.com/AncientSouls/Mixins/blob/8c09444/src/lib/manager.ts#L25)*
+*Defined in [manager.ts:25](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/manager.ts#L25)*
 
 
 

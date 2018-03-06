@@ -1,6 +1,6 @@
 {
   "name": "ancient-mixins",
-  "version": "0.0.0",
+  "version": "0.0.0-beta",
   "description": "Core functions, classes, types and interfaces.",
   "bugs": "https://github.com/AncientSouls/Mixins/issues",
   "repository": "AncientSouls/Mixins",
