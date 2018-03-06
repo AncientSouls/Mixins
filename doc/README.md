@@ -59,7 +59,7 @@ Core functions, classes, types and interfaces.
 
 **Τ TClass**:  *`object`* 
 
-*Defined in [mixins.ts:5](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/mixins.ts#L5)*
+*Defined in [mixins.ts:5](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/mixins.ts#L5)*
 
 
 #### Type declaration
@@ -76,7 +76,7 @@ ___
 
 **Τ TManager**:  *[IManager](interfaces/imanager.md)[TNode](#tnode), [IManagerEventsList](interfaces/imanagereventslist.md)* 
 
-*Defined in [manager.ts:16](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/manager.ts#L16)*
+*Defined in [manager.ts:16](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/manager.ts#L16)*
 
 
 
@@ -90,7 +90,7 @@ ___
 
 **Τ TNode**:  *[INode](interfaces/inode.md)[INodeEventsList](interfaces/inodeeventslist.md)* 
 
-*Defined in [node.ts:14](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/node.ts#L14)*
+*Defined in [node.ts:14](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/node.ts#L14)*
 
 
 
@@ -106,7 +106,7 @@ ___
 
 **●  MixedEvents**:  *[TClass](#tclass)[IEvents](interfaces/ievents.md)[IEventsList](interfaces/ieventslist.md)*  =  mixin(class {})
 
-*Defined in [events.ts:59](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/events.ts#L59)*
+*Defined in [events.ts:59](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/events.ts#L59)*
 
 
 
@@ -120,7 +120,7 @@ ___
 
 **●  MixedManager**:  *[TClass](#tclass)[TManager](#tmanager)*  =  mixin(Node)
 
-*Defined in [manager.ts:86](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/manager.ts#L86)*
+*Defined in [manager.ts:86](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/manager.ts#L86)*
 
 
 
@@ -134,7 +134,7 @@ ___
 
 **●  MixedNode**:  *[TClass](#tclass)[INode](interfaces/inode.md)[INodeEventsList](interfaces/inodeeventslist.md)*  =  mixin(Events)
 
-*Defined in [node.ts:59](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/node.ts#L59)*
+*Defined in [node.ts:59](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/node.ts#L59)*
 
 
 
@@ -152,7 +152,7 @@ ___
 
 
 
-*Defined in [events.ts:30](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/events.ts#L30)*
+*Defined in [events.ts:30](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/events.ts#L30)*
 
 
 

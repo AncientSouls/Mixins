@@ -40,7 +40,7 @@
 ### ⊕ **new INode**(id?: *`string`*): [INode](inode.md)
 
 
-*Defined in [node.ts:25](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/node.ts#L25)*
+*Defined in [node.ts:25](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/node.ts#L25)*
 
 
 
@@ -66,7 +66,7 @@
 
 **●  destroy**:  *`function`* 
 
-*Defined in [node.ts:29](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/node.ts#L29)*
+*Defined in [node.ts:29](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/node.ts#L29)*
 
 
 #### Type declaration
@@ -93,7 +93,7 @@ ___
 
 *Inherited from [IEvents](ievents.md).[emitter](ievents.md#emitter)*
 
-*Defined in [events.ts:9](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/events.ts#L9)*
+*Defined in [events.ts:9](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/events.ts#L9)*
 
 
 
@@ -107,7 +107,7 @@ ___
 
 **●  generateId**:  *`function`* 
 
-*Defined in [node.ts:27](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/node.ts#L27)*
+*Defined in [node.ts:27](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/node.ts#L27)*
 
 
 #### Type declaration
@@ -132,7 +132,7 @@ ___
 
 **●  id**:  *`string`* 
 
-*Defined in [node.ts:25](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/node.ts#L25)*
+*Defined in [node.ts:25](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/node.ts#L25)*
 
 
 
@@ -146,7 +146,7 @@ ___
 
 **●  isDestroyed**:  *`boolean`* 
 
-*Defined in [node.ts:28](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/node.ts#L28)*
+*Defined in [node.ts:28](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/node.ts#L28)*
 
 
 
@@ -166,7 +166,7 @@ ___
 
 *Inherited from [IEvents](ievents.md).[emit](ievents.md#emit)*
 
-*Defined in [events.ts:11](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/events.ts#L11)*
+*Defined in [events.ts:11](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/events.ts#L11)*
 
 
 
@@ -202,7 +202,7 @@ ___
 
 *Inherited from [IEvents](ievents.md).[off](ievents.md#off)*
 
-*Defined in [events.ts:20](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/events.ts#L20)*
+*Defined in [events.ts:20](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/events.ts#L20)*
 
 
 
@@ -238,7 +238,7 @@ ___
 
 *Inherited from [IEvents](ievents.md).[on](ievents.md#on)*
 
-*Defined in [events.ts:14](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/events.ts#L14)*
+*Defined in [events.ts:14](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/events.ts#L14)*
 
 
 
@@ -274,7 +274,7 @@ ___
 
 *Inherited from [IEvents](ievents.md).[once](ievents.md#once)*
 
-*Defined in [events.ts:17](https://github.com/AncientSouls/Mixins/blob/791ea5c/src/lib/events.ts#L17)*
+*Defined in [events.ts:17](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/events.ts#L17)*
 
 
 
