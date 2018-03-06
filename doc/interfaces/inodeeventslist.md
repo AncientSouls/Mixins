@@ -33,7 +33,7 @@
 
 **●  destroyed**:  *[INodeEventData](inodeeventdata.md)* 
 
-*Defined in [node.ts:21](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/node.ts#L21)*
+*Defined in [node.ts:21](https://github.com/AncientSouls/Mixins/blob/5a3ea7e/src/lib/node.ts#L21)*
 
 
 

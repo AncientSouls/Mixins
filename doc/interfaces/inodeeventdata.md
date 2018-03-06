@@ -12,7 +12,7 @@
 
 **●  node**:  *[INode](inode.md)[INodeEventsList](inodeeventslist.md)* 
 
-*Defined in [node.ts:17](https://github.com/AncientSouls/Mixins/blob/f138132/src/lib/node.ts#L17)*
+*Defined in [node.ts:17](https://github.com/AncientSouls/Mixins/blob/5a3ea7e/src/lib/node.ts#L17)*
 
 
 
