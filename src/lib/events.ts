@@ -1,0 +1,69 @@
+import * as EventEmitter from 'events';
+
+import {
+  TClass,
+  IInstance,
+} from './mixins';
+
+interface IEvents<IEventsList> extends IInstance {
+  emitter: EventEmitter;
+  
+  emit<IE extends keyof IEventsList>
+  (eventName: string, data: IEventsList[IE]): this;
+  
+  on<IE extends keyof IEventsList>
+  (eventName: string, listener: (data: IEventsList[IE]) => void): this;
+  
+  once<IE extends keyof IEventsList>
+  (eventName: string, listener: (data: IEventsList[IE]) => void): this;
+  
+  off<IE extends keyof IEventsList>
+  (eventName: string, listener: (data: IEventsList[IE]) => void): this;
+  
+  [key: string]: any;
+}
+
+interface IEventsList {
+  [key: string]: any;
+}
+
+function mixin<T extends TClass<IInstance>>(
+  superClass: T,
+): any {
+  return class Events extends superClass {
+    emitter: EventEmitter = new EventEmitter();
+    
+    emit(eventName, data): this {
+      this.emitter.emit(eventName, data);
+      this.emitter.emit('emit', { eventName, data });
+      return this;
+    }
+    
+    on(eventName, listener): this {
+      this.emitter.on(eventName, listener);
+      return this;
+    }
+    
+    once(eventName, listener): this {
+      this.emitter.once(eventName, listener);
+      return this;
+    }
+    
+    off(eventName, listener): this {
+      this.emitter.removeListener(eventName, listener);
+      return this;
+    }
+  };
+}
+
+const MixedEvents: TClass<IEvents<IEventsList>> = mixin(class {});
+class Events extends MixedEvents {}
+
+export {
+  mixin as default,
+  mixin,
+  MixedEvents,
+  Events,
+  IEvents,
+  IEventsList,
+};
