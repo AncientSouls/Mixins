@@ -50,6 +50,7 @@ function mixin<T extends TClass<IInstance>>(
       if (!this.isDestroyed) {
         this.isDestroyed = true;
         this.emit('destroyed', { node: this });
+        super.destroy();
       }
     }
   };

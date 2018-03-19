@@ -1,3 +1,4 @@
+import * as _ from 'lodash';
 import * as EventEmitter from 'events';
 
 import {
@@ -19,6 +20,8 @@ interface IEvents<IEventsList> extends IInstance {
   
   off<IE extends keyof IEventsList>
   (eventName: string, listener: (data: IEventsList[IE]) => void): this;
+  
+  destroy: () => void;
   
   [key: string]: any;
 }
@@ -52,6 +55,10 @@ function mixin<T extends TClass<IInstance>>(
     off(eventName, listener): this {
       this.emitter.removeListener(eventName, listener);
       return this;
+    }
+
+    destroy() {
+      _.each(this.emitter, (f,name) => this.emitter.removeAllListeners(name));
     }
   };
 }
