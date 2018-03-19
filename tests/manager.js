@@ -1,20 +1,18 @@
 "use strict";
-exports.__esModule = true;
-var chai_1 = require("chai");
-var node_1 = require("../lib/node");
-var manager_1 = require("../lib/manager");
+Object.defineProperty(exports, "__esModule", { value: true });
+const chai_1 = require("chai");
+const node_1 = require("../lib/node");
+const manager_1 = require("../lib/manager");
 function default_1() {
-    describe('Manager:', function () {
-        it('add() / added / destroy() / removed', function (done) {
-            var manager = new manager_1.Manager();
-            manager.on('removed', function (_a) {
-                var node = _a.node, m = _a.manager;
+    describe('Manager:', () => {
+        it('add() / added / destroy() / removed', (done) => {
+            const manager = new manager_1.Manager();
+            manager.on('removed', ({ node, manager: m }) => {
                 chai_1.assert.equal(m, manager);
                 chai_1.assert.isEmpty(manager.nodes);
                 done();
             });
-            manager.on('added', function (_a) {
-                var node = _a.node, m = _a.manager;
+            manager.on('added', ({ node, manager: m }) => {
                 chai_1.assert.equal(m, manager);
                 chai_1.assert.isNotEmpty(manager.nodes);
                 node.destroy();
@@ -23,5 +21,5 @@ function default_1() {
         });
     });
 }
-exports["default"] = default_1;
+exports.default = default_1;
 //# sourceMappingURL=manager.js.map
