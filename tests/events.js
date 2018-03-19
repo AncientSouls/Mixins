@@ -23,6 +23,17 @@ function default_1() {
             });
             events.emit('a', { b: 'c' });
         });
+        it('destroy()', () => {
+            class TestEvents extends events_1.Events {
+            }
+            const events = new TestEvents();
+            const listener = () => { };
+            events.on('a', listener);
+            events.on('a', listener);
+            chai_1.assert.deepEqual(events.emitter._events, { a: [listener, listener] });
+            events.destroy();
+            chai_1.assert.deepEqual(events.emitter._events, {});
+        });
     });
 }
 exports.default = default_1;

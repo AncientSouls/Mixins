@@ -34,5 +34,20 @@ export default function () {
       });
       events.emit('a', { b: 'c' });
     });
+    it('destroy()', () => {
+      interface ITestEventsList extends IEventsList {
+        a: { b?: 'c', d?: 'e' };
+      }
+      
+      class TestEvents extends Events implements IEvents<ITestEventsList> {}
+      
+      const events: any = new TestEvents();
+      const listener = () => {};
+      events.on('a', listener);
+      events.on('a', listener);
+      assert.deepEqual(events.emitter._events, { a: [listener, listener] });
+      events.destroy();
+      assert.deepEqual(events.emitter._events, {});
+    });
   });
 }
