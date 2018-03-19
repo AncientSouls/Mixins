@@ -58,7 +58,8 @@ function mixin<T extends TClass<IInstance>>(
     }
 
     destroy() {
-      _.each(this.emitter, (f,name) => this.emitter.removeAllListeners(name));
+      const emitter: any = this.emitter;
+      _.each(emitter._events, (f,name) => this.emitter.removeAllListeners(name));
     }
   };
 }
