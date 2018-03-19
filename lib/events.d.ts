@@ -7,6 +7,7 @@ interface IEvents<IEventsList> extends IInstance {
     on<IE extends keyof IEventsList>(eventName: string, listener: (data: IEventsList[IE]) => void): this;
     once<IE extends keyof IEventsList>(eventName: string, listener: (data: IEventsList[IE]) => void): this;
     off<IE extends keyof IEventsList>(eventName: string, listener: (data: IEventsList[IE]) => void): this;
+    destroy: () => void;
     [key: string]: any;
 }
 interface IEventsList {
