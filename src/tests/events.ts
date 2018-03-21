@@ -9,7 +9,7 @@ import {
 
 export default function () {
   describe('Events:', () => {
-    it('on() / once() / off() / emit()', () => {
+    it('on() / once() / off() / emit()', (done) => {
       interface ITestEventsList extends IEventsList {
         a: { b?: 'c', d?: 'e' };
       }
@@ -26,9 +26,13 @@ export default function () {
       const listener = data => assert.deepEqual(data, callback());
       
       events.on('a', listener);
-      events.once('a', ({ b }) => {
-        events.once('a', ({ b }) => {
+      events.once('a', (data) => {
+        assert.deepEqual(data, { b: 'c' });
+        events.once('a', (data) => {
+          assert.deepEqual(data, { d: 'e' });
           events.off('a', listener);
+          events.emit('a', {});
+          done();
         });
         events.emit('a', { d: 'e' });
       });
