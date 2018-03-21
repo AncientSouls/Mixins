@@ -10,16 +10,16 @@ interface IEvents<IEventsList> extends IInstance {
   emitter: EventEmitter;
   
   emit<IE extends keyof IEventsList>
-  (eventName: string, data: IEventsList[IE]): this;
+  (eventName: IE, data: IEventsList[IE]): this;
   
   on<IE extends keyof IEventsList>
-  (eventName: string, listener: (data: IEventsList[IE]) => void): this;
+  (eventName: IE, listener: (data: IEventsList[IE]) => void): this;
   
   once<IE extends keyof IEventsList>
-  (eventName: string, listener: (data: IEventsList[IE]) => void): this;
+  (eventName: IE, listener: (data: IEventsList[IE]) => void): this;
   
   off<IE extends keyof IEventsList>
-  (eventName: string, listener: (data: IEventsList[IE]) => void): this;
+  (eventName: IE, listener: (data: IEventsList[IE]) => void): this;
   
   destroy: () => void;
   
