@@ -10,9 +10,9 @@ interface INodeEventsList extends IEventsList {
 interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList> {
     id: string;
     new (id?: string): any;
-    generateId: () => string;
+    generateId(): string;
     isDestroyed: boolean;
-    destroy: () => void;
+    destroy(): void;
 }
 declare function mixin<T extends TClass<IInstance>>(superClass: T): any;
 declare const MixedNode: TClass<INode<INodeEventsList>>;

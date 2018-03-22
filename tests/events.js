@@ -5,7 +5,7 @@ const sinon = require("sinon");
 const events_1 = require("../lib/events");
 function default_1() {
     describe('Events:', () => {
-        it('on() / once() / off() / emit()', () => {
+        it('on() / once() / off() / emit()', (done) => {
             class TestEvents extends events_1.Events {
             }
             const events = new TestEvents();
@@ -15,9 +15,13 @@ function default_1() {
             callback.throws();
             const listener = data => chai_1.assert.deepEqual(data, callback());
             events.on('a', listener);
-            events.once('a', ({ b }) => {
-                events.once('a', ({ b }) => {
+            events.once('a', (data) => {
+                chai_1.assert.deepEqual(data, { b: 'c' });
+                events.once('a', (data) => {
+                    chai_1.assert.deepEqual(data, { d: 'e' });
                     events.off('a', listener);
+                    events.emit('a', {});
+                    done();
                 });
                 events.emit('a', { d: 'e' });
             });
