@@ -24,9 +24,9 @@ interface INodeEventsList extends IEventsList {
 interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList> {
   id: string;
   new (id?: string);
-  generateId: () => string;
+  generateId(): string;
   isDestroyed: boolean;
-  destroy: () => void;
+  destroy(): void;
 }
 
 function mixin<T extends TClass<IInstance>>(
