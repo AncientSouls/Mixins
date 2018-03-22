@@ -7,29 +7,63 @@ import {
 } from './mixins';
 
 interface IEvents<IEventsList> extends IInstance {
+  /**
+   * Native nodejs EventEmitter.
+   */
   emitter: EventEmitter;
-  
+
+  /**
+   * Emit event with custom data and emit event with name 'emit'.
+   */
   emit<IE extends keyof IEventsList>
   (eventName: IE, data: IEventsList[IE]): this;
-  
+
+  /**
+   * Adds the listener function to the end of the listeners array for the event named eventName.
+   */
   on<IE extends keyof IEventsList>
   (eventName: IE, listener: (data: IEventsList[IE]) => void): this;
-  
+
+  /**
+   * Adds a one-time listener function for the event named eventName.
+   */ 
   once<IE extends keyof IEventsList>
   (eventName: IE, listener: (data: IEventsList[IE]) => void): this;
-  
+
+  /**
+   * Removes the specified listener from the listener array for the event named eventName.
+   */
   off<IE extends keyof IEventsList>
   (eventName: IE, listener: (data: IEventsList[IE]) => void): this;
-  
+
+  /**
+   * Call removeAllListeners to every event.
+   */
   destroy: () => void;
-  
+
   [key: string]: any;
+}
+
+interface IEventsEmitData {
+  eventName: string;
+  data: any;
 }
 
 interface IEventsList {
   [key: string]: any;
+  emit: IEventsEmitData;
 }
 
+/**
+ * Mixin your class with Events functionality.
+ * @example
+ * ```typescript
+ * 
+ * import { mixin, IEventsList, IEvents } from 'ancient-mixins/lib/events';
+ * import { TClass } from 'ancient-mixins/lib/mixins';
+ * const MyEvents: TClass<IEvents<IEventsList>> = mixin(class {});
+ * ```
+ */
 function mixin<T extends TClass<IInstance>>(
   superClass: T,
 ): any {
@@ -74,4 +108,5 @@ export {
   Events,
   IEvents,
   IEventsList,
+  IEventsEmitData,
 };

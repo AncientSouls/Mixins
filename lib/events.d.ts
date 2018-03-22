@@ -10,11 +10,16 @@ interface IEvents<IEventsList> extends IInstance {
     destroy: () => void;
     [key: string]: any;
 }
+interface IEventsEmitData {
+    eventName: string;
+    data: any;
+}
 interface IEventsList {
     [key: string]: any;
+    emit: IEventsEmitData;
 }
 declare function mixin<T extends TClass<IInstance>>(superClass: T): any;
 declare const MixedEvents: TClass<IEvents<IEventsList>>;
 declare class Events extends MixedEvents {
 }
-export { mixin as default, mixin, MixedEvents, Events, IEvents, IEventsList };
+export { mixin as default, mixin, MixedEvents, Events, IEvents, IEventsList, IEventsEmitData };

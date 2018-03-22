@@ -34,7 +34,16 @@ interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEv
   create(id?: string): IN;
 }
 
-
+/**
+ * Mixin your class with manager functionality.
+ * @example
+ * ```typescript
+ * 
+ * import { mixin, TManager } from 'ancient-mixins/lib/manager';
+ * import { TClass } from 'ancient-mixins/lib/mixins';
+ * const MixedManager: TClass<TManager> = mixin(Node);
+ * ```
+ */
 function mixin<T extends TClass<IInstance>>(
   superClass: T,
 ): any {
