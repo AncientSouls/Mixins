@@ -13,6 +13,10 @@ import {
   TNode,
 } from './node';
 
+import {
+  List,
+} from './list';
+
 type TManager = IManager<TNode, IManagerEventsList>;
 
 interface IManagerEventData {
@@ -48,16 +52,14 @@ function mixin<T extends TClass<IInstance>>(
   superClass: T,
 ): any {
   return class Manager extends superClass {
-    public Node = Node;
-    
-    nodes = {};
+    public list = new List();
     
     add(node) {
       if (node.isDestroyed) {
         throw new Error(`Destroyed node ${node.id} cant be added to ${this.id}.`);
       }
-      
-      this.nodes[node.id] = node;
+
+      this.list.add(node);
       this.wrap(node);
       this.emit('added', { node, manager: this });
       
@@ -65,29 +67,16 @@ function mixin<T extends TClass<IInstance>>(
     }
     
     wrap(node) {
-      const listener = ({ eventName, data }) => {
-        if (eventName === 'destroyed') this.remove(node);
-        else this.emit(eventName, _.extend({}, data, { manager: this }));
-      };
-      node.on('emit', listener);
-      this.on('destroyed', () => node.off('emit', listener));
+      node.on('destroyed', () => this.remove(node));
       
       return this;
     }
     
     remove(node) {
-      if (this.nodes[node.id]) {
-        delete this.nodes[node.id];
-        this.emit('removed', { node, manager: this });
-      }
+      this.list.remove(node);
+      this.emit('removed', { node, manager: this });
       
       return this;
-    }
-    
-    create(id?) {
-      const node = new this.Node(id);
-      this.add(node);
-      return node;
     }
   };
 }
