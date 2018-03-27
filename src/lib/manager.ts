@@ -1,4 +1,3 @@
-import * as EventEmitter from 'events';
 import * as _ from 'lodash';
 
 import {
@@ -13,6 +12,10 @@ import {
   TNode,
 } from './node';
 
+import {
+  List,
+} from './list';
+
 type TManager = IManager<TNode, IManagerEventsList>;
 
 interface IManagerEventData {
@@ -26,12 +29,25 @@ interface IManagerEventsList extends INodeEventsList {
 }
 
 interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEventsList> {
-  Node: TClass<IN>;
-  nodes: { [id:string]: IN };
+  /**
+   * Current instance of a List class.
+   */
+  List: TClass<IN>;
+
+  /**
+   * Adds item to list with emitting event `"added"`.
+   */
   add(node: IN): this;
+
+  /**
+   * Adds listener, which remove node from list after 'destroyed' event.
+   */
   wrap(node: IN): this;
+
+  /**
+   * Remove node from list with emitting event `"removed"`.
+   */
   remove(node: IN): this;
-  create(id?: string): IN;
 }
 
 /**
@@ -40,6 +56,7 @@ interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEv
  * ```typescript
  * 
  * import { mixin, TManager } from 'ancient-mixins/lib/manager';
+ * import { Node } from 'ancient-mixins/lib/node';
  * import { TClass } from 'ancient-mixins/lib/mixins';
  * const MixedManager: TClass<TManager> = mixin(Node);
  * ```
@@ -48,16 +65,14 @@ function mixin<T extends TClass<IInstance>>(
   superClass: T,
 ): any {
   return class Manager extends superClass {
-    public Node = Node;
-    
-    nodes = {};
+    public list = new List();
     
     add(node) {
       if (node.isDestroyed) {
         throw new Error(`Destroyed node ${node.id} cant be added to ${this.id}.`);
       }
-      
-      this.nodes[node.id] = node;
+
+      this.list.add(node);
       this.wrap(node);
       this.emit('added', { node, manager: this });
       
@@ -65,29 +80,16 @@ function mixin<T extends TClass<IInstance>>(
     }
     
     wrap(node) {
-      const listener = ({ eventName, data }) => {
-        if (eventName === 'destroyed') this.remove(node);
-        else this.emit(eventName, _.extend({}, data, { manager: this }));
-      };
-      node.on('emit', listener);
-      this.on('destroyed', () => node.off('emit', listener));
+      node.on('destroyed', () => this.remove(node));
       
       return this;
     }
     
     remove(node) {
-      if (this.nodes[node.id]) {
-        delete this.nodes[node.id];
-        this.emit('removed', { node, manager: this });
-      }
+      this.list.remove(node);
+      this.emit('removed', { node, manager: this });
       
       return this;
-    }
-    
-    create(id?) {
-      const node = new this.Node(id);
-      this.add(node);
-      return node;
     }
   };
 }

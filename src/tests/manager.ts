@@ -14,12 +14,12 @@ export default function () {
       const manager = new Manager();
       manager.on('removed', ({ node, manager: m }) => {
         assert.equal(m, manager);
-        assert.isEmpty(manager.nodes);
+        assert.isEmpty(manager.list.nodes);
         done();
       });
       manager.on('added', ({ node, manager: m }) => {
         assert.equal(m, manager);
-        assert.isNotEmpty(manager.nodes);
+        assert.isNotEmpty(manager.list.nodes);
         node.destroy();
       });
       manager.add(new Node());

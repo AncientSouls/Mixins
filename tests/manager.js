@@ -9,12 +9,12 @@ function default_1() {
             const manager = new manager_1.Manager();
             manager.on('removed', ({ node, manager: m }) => {
                 chai_1.assert.equal(m, manager);
-                chai_1.assert.isEmpty(manager.nodes);
+                chai_1.assert.isEmpty(manager.list.nodes);
                 done();
             });
             manager.on('added', ({ node, manager: m }) => {
                 chai_1.assert.equal(m, manager);
-                chai_1.assert.isNotEmpty(manager.nodes);
+                chai_1.assert.isNotEmpty(manager.list.nodes);
                 node.destroy();
             });
             manager.add(new node_1.Node());
