@@ -13,7 +13,7 @@ interface IEvents<IEventsList> extends IInstance {
   emitter: EventEmitter;
 
   /**
-   * Emit event with custom data and emit event with name 'emit'.
+   * Emit event with custom data and `"emit"` event with data `{ eventName: string, data: any }`
    */
   emit<IE extends keyof IEventsList>
   (eventName: IE, data: IEventsList[IE]): this;
@@ -37,7 +37,7 @@ interface IEvents<IEventsList> extends IInstance {
   (eventName: IE, listener: (data: IEventsList[IE]) => void): this;
 
   /**
-   * Call removeAllListeners to every event.
+   * Delte all linstening events.
    */
   destroy: () => void;
 
