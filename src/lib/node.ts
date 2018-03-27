@@ -22,13 +22,44 @@ interface INodeEventsList extends IEventsList {
 }
 
 interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList> {
+  /**
+   * Unic string for this node.
+   */
   id: string;
+
+  /**
+   * Constructor can use given string as id.
+   */
   new (id?: string);
+
+  /**
+   * Uuid v4 method to generate id.
+   */
   generateId(): string;
+
+  /**
+   * Does this node took the destroy command?
+   */
   isDestroyed: boolean;
+
+  /**
+   * Emits 'destroyed' event, change this.isDestroyed to true and off all events.
+   */
   destroy(): void;
 }
 
+/**
+ * Mixin your class with Node functionality.
+ * @example
+ * ```typescript
+ * 
+ * import { mixin, INodeEventsList, INode } from 'ancient-mixins/lib/node';
+ * import { Events } from 'ancient-mixins/lib/events';
+ * import { TClass } from 'ancient-mixins/lib/mixins';
+ * 
+ * const MyNode: TClass<INode<INodeEventsList>> = mixin(Events);
+ * ```
+ */
 function mixin<T extends TClass<IInstance>>(
   superClass: T,
 ): any {

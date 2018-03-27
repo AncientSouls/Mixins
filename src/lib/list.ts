@@ -21,11 +21,34 @@ interface IListEventsList extends INodeEventsList {
 }
 
 interface IList<IN, IEventsList extends IListEventsList> extends INode<IEventsList> {
+  /**
+   * Node class for simple adding new item to list.
+   */
   Node: TClass<IN>;
+
+  /**
+   * Container for list.
+   */
   nodes: { [id:string]: IN };
+
+  /**
+   * Add item to list.
+   */
   add(node: IN): this;
+
+  /**
+   * Unsafe. Adding 'Emit' event for node events.
+   */
   wrap(node: IN): this;
+
+  /**
+   * Remove node from list.
+   */
   remove(node: IN): this;
+  
+  /**
+   * Create node with string id.
+   */
   create(id?: string): IN;
 }
 

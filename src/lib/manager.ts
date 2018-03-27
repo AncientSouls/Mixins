@@ -1,4 +1,3 @@
-import * as EventEmitter from 'events';
 import * as _ from 'lodash';
 
 import {
@@ -30,12 +29,25 @@ interface IManagerEventsList extends INodeEventsList {
 }
 
 interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEventsList> {
-  Node: TClass<IN>;
-  nodes: { [id:string]: IN };
+  /**
+   * Current instance of a List class.
+   */
+  List: TClass<IN>;
+
+  /**
+   * Adds item to list with emitting event `"added"`.
+   */
   add(node: IN): this;
+
+  /**
+   * Adds listener, which remove node from list after 'destroyed' event.
+   */
   wrap(node: IN): this;
+
+  /**
+   * Remove node from list with emitting event `"removed"`.
+   */
   remove(node: IN): this;
-  create(id?: string): IN;
 }
 
 /**
@@ -44,6 +56,7 @@ interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEv
  * ```typescript
  * 
  * import { mixin, TManager } from 'ancient-mixins/lib/manager';
+ * import { Node } from 'ancient-mixins/lib/node';
  * import { TClass } from 'ancient-mixins/lib/mixins';
  * const MixedManager: TClass<TManager> = mixin(Node);
  * ```
