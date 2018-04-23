@@ -18,7 +18,7 @@ type TList = IList<TNode, IListEventsList>;
 
 interface IListEventsList extends INodeEventsList {
   /**
-  * Triggers, when called node.destroy().
+  * Emits, when called `node.destroy()`.
   */
   destroyed: INodeEventData;
 }
@@ -40,7 +40,7 @@ interface IList<IN, IEventsList extends IListEventsList> extends INode<IEventsLi
   add(node: IN): this;
 
   /**
-   * Unsafe. Adding 'Emit' event for node events.
+   * Unsafe. Adding `Emit` event for node events.
    */
   wrap(node: IN): this;
 

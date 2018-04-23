@@ -56,7 +56,7 @@ interface IEventsList {
 
   [key: string]: any;
   /**
-   * Event, triggering at every event. 
+   * Event, emiting at every event. 
    */
   emit: IEventsEmitData;
 }

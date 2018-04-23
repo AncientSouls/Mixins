@@ -19,7 +19,7 @@ interface INodeEventData {
 
 interface INodeEventsList extends IEventsList {
   /**
-  * Triggers, when called node.destroy().
+  * Emits, when called `node.destroy()`.
   */
   destroyed: INodeEventData;
 }
@@ -46,7 +46,7 @@ interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList
   isDestroyed: boolean;
 
   /**
-   * Emits 'destroyed' event, change this.isDestroyed to true and off all events.
+   * Emits 'destroyed' event, change `this.isDestroyed` to true and off all events.
    */
   destroy(): void;
 }

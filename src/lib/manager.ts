@@ -25,12 +25,12 @@ interface IManagerEventData {
 
 interface IManagerEventsList extends INodeEventsList {
   /**
-  * Triggers, when called manager.add().
+  * Emits, when called `manager.add()`.
   */
   added: IManagerEventData;
 
   /**
-  * Triggers, when called manager.remove().
+  * Emits, when called `manager.remove()`.
   */
   removed: IManagerEventData;
 }
@@ -42,17 +42,17 @@ interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEv
   List: TClass<IN>;
 
   /**
-   * Adds item to list with emitting event `"added"`.
+   * Adds item to list with emitting event `added`.
    */
   add(node: IN): this;
 
   /**
-   * Adds listener, which remove node from list after 'destroyed' event.
+   * Adds listener, which remove node from list after `destroyed` event.
    */
   wrap(node: IN): this;
 
   /**
-   * Remove node from list with emitting event `"removed"`.
+   * Remove node from list with emitting event `removed`.
    */
   remove(node: IN): this;
 }
