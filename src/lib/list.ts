@@ -17,6 +17,9 @@ import {
 type TList = IList<TNode, IListEventsList>;
 
 interface IListEventsList extends INodeEventsList {
+  /**
+  * Triggers, when called node.destroy().
+  */
   destroyed: INodeEventData;
 }
 
@@ -98,6 +101,9 @@ function mixin<T extends TClass<IInstance>>(
 }
 
 const MixedList: TClass<TList> = mixin(Node);
+/**
+ * Already mixed class. Plug and play.
+ */
 class List extends MixedList {}
 
 export {

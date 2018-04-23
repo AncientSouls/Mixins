@@ -18,6 +18,9 @@ interface INodeEventData {
 }
 
 interface INodeEventsList extends IEventsList {
+  /**
+  * Triggers, when called node.destroy().
+  */
   destroyed: INodeEventData;
 }
 
@@ -87,8 +90,10 @@ function mixin<T extends TClass<IInstance>>(
   };
 }
 
-
 const MixedNode: TClass<INode<INodeEventsList>> = mixin(Events);
+/**
+ * Already mixed class. Plug and play.
+ */
 class Node extends MixedNode {}
 
 export {

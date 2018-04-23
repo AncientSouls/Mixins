@@ -50,7 +50,14 @@ interface IEventsEmitData {
 }
 
 interface IEventsList {
+  /**
+   * Key - event name, value - data to event.
+   */
+
   [key: string]: any;
+  /**
+   * Event, triggering at every event. 
+   */
   emit: IEventsEmitData;
 }
 
@@ -99,6 +106,9 @@ function mixin<T extends TClass<IInstance>>(
 }
 
 const MixedEvents: TClass<IEvents<IEventsList>> = mixin(class {});
+/**
+ * Already mixed class. Plug and play.
+ */
 class Events extends MixedEvents {}
 
 export {

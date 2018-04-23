@@ -24,7 +24,14 @@ interface IManagerEventData {
 }
 
 interface IManagerEventsList extends INodeEventsList {
+  /**
+  * Triggers, when called manager.add().
+  */
   added: IManagerEventData;
+
+  /**
+  * Triggers, when called manager.remove().
+  */
   removed: IManagerEventData;
 }
 
@@ -95,6 +102,9 @@ function mixin<T extends TClass<IInstance>>(
 }
 
 const MixedManager: TClass<TManager> = mixin(Node);
+/**
+ * Already mixed class. Plug and play.
+ */
 class Manager extends MixedManager {}
 
 export {
