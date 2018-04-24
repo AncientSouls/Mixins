@@ -56,7 +56,7 @@ interface IList<IN, IEventsList extends IListEventsList> extends INode<IEventsLi
 }
 
 /**
- * Mixin your class with List functionality.
+ * Mixin your Node with List functionality.
  * @example
  * ```typescript
  * 

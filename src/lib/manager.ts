@@ -58,7 +58,7 @@ interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEv
 }
 
 /**
- * Mixin your class with manager functionality.
+ * Mixin your Node with manager functionality.
  * @example
  * ```typescript
  * 

@@ -52,7 +52,7 @@ interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList
 }
 
 /**
- * Mixin your class with Node functionality.
+ * Mixin your Events with Node functionality.
  * @example
  * ```typescript
  * 
