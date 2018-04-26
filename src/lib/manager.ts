@@ -98,6 +98,11 @@ export function mixin<T extends TClass<IInstance>>(
       
       return this;
     }
+
+    destroy() {
+      this.list.destroy();
+      super.destroy();
+    }
   };
 }
 
