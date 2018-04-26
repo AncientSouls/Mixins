@@ -1,5 +1,4 @@
 import { assert } from 'chai';
-import * as sinon from 'sinon';
 
 import {
   Events,
@@ -18,12 +17,11 @@ export default function () {
       
       const events: IEvents<ITestEventsList> = new TestEvents();
       
-      const callback = sinon.stub();
-      callback.onCall(0).returns({ b: 'c' });
-      callback.onCall(1).returns({ d: 'e' });
-      callback.throws();
-      
-      const listener = data => assert.deepEqual(data, callback());
+      let counter = 0;      
+      const listener = (data) => {
+        assert.deepEqual(data, !counter ? { b: 'c' } : { d: 'e' });
+        counter++;
+      };
       
       events.on('a', listener);
       events.once('a', (data) => {

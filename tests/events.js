@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const chai_1 = require("chai");
-const sinon = require("sinon");
 const events_1 = require("../lib/events");
 function default_1() {
     describe('Events:', () => {
@@ -9,11 +8,11 @@ function default_1() {
             class TestEvents extends events_1.Events {
             }
             const events = new TestEvents();
-            const callback = sinon.stub();
-            callback.onCall(0).returns({ b: 'c' });
-            callback.onCall(1).returns({ d: 'e' });
-            callback.throws();
-            const listener = data => chai_1.assert.deepEqual(data, callback());
+            let counter = 0;
+            const listener = (data) => {
+                chai_1.assert.deepEqual(data, !counter ? { b: 'c' } : { d: 'e' });
+                counter++;
+            };
             events.on('a', listener);
             events.once('a', (data) => {
                 chai_1.assert.deepEqual(data, { b: 'c' });
