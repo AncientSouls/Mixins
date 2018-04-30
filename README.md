@@ -10,7 +10,7 @@ Core functions, classes, types and interfaces.
 ## Install
 
 ```
-npm i ancient-mixins
+npm i --save ancient-mixins
 ```
 ## About 
 
