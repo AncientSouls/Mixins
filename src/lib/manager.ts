@@ -16,42 +16,49 @@ import {
   List,
 } from './list';
 
-type TManager = IManager<TNode, IManagerEventsList>;
+export type TManager = IManager<TNode, IManagerEventsList>;
 
-interface IManagerEventData {
+export interface IManagerEventData {
   node: TNode;
   manager: TManager;
 }
 
-interface IManagerEventsList extends INodeEventsList {
+export interface IManagerEventsList extends INodeEventsList {
+  /**
+  * Emits, when called `manager.add()`.
+  */
   added: IManagerEventData;
+
+  /**
+  * Emits, when called `manager.remove()`.
+  */
   removed: IManagerEventData;
 }
 
-interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEventsList> {
+export interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEventsList> {
   /**
    * Current instance of a List class.
    */
   List: TClass<IN>;
 
   /**
-   * Adds item to list with emitting event `"added"`.
+   * Adds item to list with emitting event `added`.
    */
   add(node: IN): this;
 
   /**
-   * Adds listener, which remove node from list after 'destroyed' event.
+   * Adds listener, which remove node from list after `destroyed` event.
    */
   wrap(node: IN): this;
 
   /**
-   * Remove node from list with emitting event `"removed"`.
+   * Remove node from list with emitting event `removed`.
    */
   remove(node: IN): this;
 }
 
 /**
- * Mixin your class with manager functionality.
+ * Mixin your Node with manager functionality.
  * @example
  * ```typescript
  * 
@@ -61,7 +68,7 @@ interface IManager<IN, IEventsList extends IManagerEventsList> extends INode<IEv
  * const MixedManager: TClass<TManager> = mixin(Node);
  * ```
  */
-function mixin<T extends TClass<IInstance>>(
+export function mixin<T extends TClass<IInstance>>(
   superClass: T,
 ): any {
   return class Manager extends superClass {
@@ -91,20 +98,16 @@ function mixin<T extends TClass<IInstance>>(
       
       return this;
     }
+
+    destroy() {
+      this.list.destroy();
+      super.destroy();
+    }
   };
 }
 
-const MixedManager: TClass<TManager> = mixin(Node);
-class Manager extends MixedManager {}
-
-export {
-  mixin as default,
-  mixin,
-  MixedManager,
-  Manager,
-  IManager,
-  IManagerEventData,
-  IManagerEventsList,
-  TNode,
-  TManager,
-};
+export const MixedManager: TClass<TManager> = mixin(Node);
+/**
+ * Already mixed class. Plug and play.
+ */
+export class Manager extends MixedManager {}

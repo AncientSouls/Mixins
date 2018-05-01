@@ -1,21 +1,20 @@
 import { TClass, IInstance } from './mixins';
 import { IEvents, IEventsList } from './events';
-declare type TNode = INode<INodeEventsList>;
-interface INodeEventData {
+export declare type TNode = INode<INodeEventsList>;
+export interface INodeEventData {
     node: INode<INodeEventsList>;
 }
-interface INodeEventsList extends IEventsList {
+export interface INodeEventsList extends IEventsList {
     destroyed: INodeEventData;
 }
-interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList> {
+export interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList> {
     id: string;
     new (id?: string): any;
     generateId(): string;
     isDestroyed: boolean;
     destroy(): void;
 }
-declare function mixin<T extends TClass<IInstance>>(superClass: T): any;
-declare const MixedNode: TClass<INode<INodeEventsList>>;
-declare class Node extends MixedNode {
+export declare function mixin<T extends TClass<IInstance>>(superClass: T): any;
+export declare const MixedNode: TClass<INode<INodeEventsList>>;
+export declare class Node extends MixedNode {
 }
-export { mixin as default, mixin, MixedNode, Node, INode, INodeEventData, INodeEventsList, TNode };

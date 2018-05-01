@@ -11,17 +11,20 @@ import {
   IEventsList,
 } from './events';
 
-type TNode = INode<INodeEventsList>;
+export type TNode = INode<INodeEventsList>;
 
-interface INodeEventData {
+export interface INodeEventData {
   node: INode<INodeEventsList>;
 }
 
-interface INodeEventsList extends IEventsList {
+export interface INodeEventsList extends IEventsList {
+  /**
+  * Emits, when called `node.destroy()`.
+  */
   destroyed: INodeEventData;
 }
 
-interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList> {
+export interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList> {
   /**
    * Unic string for this node.
    */
@@ -43,13 +46,13 @@ interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList
   isDestroyed: boolean;
 
   /**
-   * Emits 'destroyed' event, change this.isDestroyed to true and off all events.
+   * Emits 'destroyed' event, change `this.isDestroyed` to true and off all events.
    */
   destroy(): void;
 }
 
 /**
- * Mixin your class with Node functionality.
+ * Mixin your Events with Node functionality.
  * @example
  * ```typescript
  * 
@@ -60,7 +63,7 @@ interface INode<IEventsList extends INodeEventsList> extends IEvents<IEventsList
  * const MyNode: TClass<INode<INodeEventsList>> = mixin(Events);
  * ```
  */
-function mixin<T extends TClass<IInstance>>(
+export function mixin<T extends TClass<IInstance>>(
   superClass: T,
 ): any {
   return class Node extends superClass {
@@ -87,17 +90,8 @@ function mixin<T extends TClass<IInstance>>(
   };
 }
 
-
-const MixedNode: TClass<INode<INodeEventsList>> = mixin(Events);
-class Node extends MixedNode {}
-
-export {
-  mixin as default,
-  mixin,
-  MixedNode,
-  Node,
-  INode,
-  INodeEventData,
-  INodeEventsList,
-  TNode,
-};
+export const MixedNode: TClass<INode<INodeEventsList>> = mixin(Events);
+/**
+ * Already mixed class. Plug and play.
+ */
+export class Node extends MixedNode {}

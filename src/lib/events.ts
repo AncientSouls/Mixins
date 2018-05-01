@@ -6,7 +6,7 @@ import {
   IInstance,
 } from './mixins';
 
-interface IEvents<IEventsList> extends IInstance {
+export interface IEvents<IEventsList> extends IInstance {
   /**
    * Native nodejs EventEmitter.
    */
@@ -19,13 +19,13 @@ interface IEvents<IEventsList> extends IInstance {
   (eventName: IE, data: IEventsList[IE]): this;
 
   /**
-   * Adds the listener function to the end of the listeners array for the event named eventName.
+   * Adds the listener export function to the end of the listeners array for the event named eventName.
    */
   on<IE extends keyof IEventsList>
   (eventName: IE, listener: (data: IEventsList[IE]) => void): this;
 
   /**
-   * Adds a one-time listener function for the event named eventName.
+   * Adds a one-time listener export function for the event named eventName.
    */ 
   once<IE extends keyof IEventsList>
   (eventName: IE, listener: (data: IEventsList[IE]) => void): this;
@@ -44,13 +44,20 @@ interface IEvents<IEventsList> extends IInstance {
   [key: string]: any;
 }
 
-interface IEventsEmitData {
+export interface IEventsEmitData {
   eventName: string;
   data: any;
 }
 
-interface IEventsList {
+export interface IEventsList {
+  /**
+   * Key - event name, value - data to event.
+   */
+
   [key: string]: any;
+  /**
+   * Event, emiting at every event. 
+   */
   emit: IEventsEmitData;
 }
 
@@ -64,7 +71,7 @@ interface IEventsList {
  * const MyEvents: TClass<IEvents<IEventsList>> = mixin(class {});
  * ```
  */
-function mixin<T extends TClass<IInstance>>(
+export function mixin<T extends TClass<IInstance>>(
   superClass: T,
 ): any {
   return class Events extends superClass {
@@ -98,15 +105,8 @@ function mixin<T extends TClass<IInstance>>(
   };
 }
 
-const MixedEvents: TClass<IEvents<IEventsList>> = mixin(class {});
-class Events extends MixedEvents {}
-
-export {
-  mixin as default,
-  mixin,
-  MixedEvents,
-  Events,
-  IEvents,
-  IEventsList,
-  IEventsEmitData,
-};
+export const MixedEvents: TClass<IEvents<IEventsList>> = mixin(class {});
+/**
+ * Already mixed class. Plug and play.
+ */
+export class Events extends MixedEvents {}

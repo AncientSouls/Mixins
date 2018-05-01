@@ -1,7 +1,7 @@
 /// <reference types="node" />
 import * as EventEmitter from 'events';
 import { TClass, IInstance } from './mixins';
-interface IEvents<IEventsList> extends IInstance {
+export interface IEvents<IEventsList> extends IInstance {
     emitter: EventEmitter;
     emit<IE extends keyof IEventsList>(eventName: IE, data: IEventsList[IE]): this;
     on<IE extends keyof IEventsList>(eventName: IE, listener: (data: IEventsList[IE]) => void): this;
@@ -10,16 +10,15 @@ interface IEvents<IEventsList> extends IInstance {
     destroy: () => void;
     [key: string]: any;
 }
-interface IEventsEmitData {
+export interface IEventsEmitData {
     eventName: string;
     data: any;
 }
-interface IEventsList {
+export interface IEventsList {
     [key: string]: any;
     emit: IEventsEmitData;
 }
-declare function mixin<T extends TClass<IInstance>>(superClass: T): any;
-declare const MixedEvents: TClass<IEvents<IEventsList>>;
-declare class Events extends MixedEvents {
+export declare function mixin<T extends TClass<IInstance>>(superClass: T): any;
+export declare const MixedEvents: TClass<IEvents<IEventsList>>;
+export declare class Events extends MixedEvents {
 }
-export { mixin as default, mixin, MixedEvents, Events, IEvents, IEventsList, IEventsEmitData };
