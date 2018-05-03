@@ -75,7 +75,11 @@ export function mixin<T extends TClass<IInstance>>(
   superClass: T,
 ): any {
   return class Events extends superClass {
-    emitter: EventEmitter = new EventEmitter();
+    emitter: EventEmitter = (() => {
+      const emitter = new EventEmitter();
+      emitter.setMaxListeners(0);
+      return emitter;
+    })();
     
     emit(eventName, data): this {
       this.emitter.emit(eventName, data);
